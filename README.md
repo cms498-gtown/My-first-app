@@ -21,6 +21,8 @@ pip install -r requirements.txt
 ```
 [Obtain an API Key](https://www.alphavantage.co/support/#api-key) from AlphaVantage.
 
+TODO include instructions here for signing up for email sending platform. Obtain sendgrid API key
+
 Create a ".env" file and add contents like the following (using your own AlphaVantage API Key):
 
 ```sh
@@ -50,4 +52,10 @@ Run the stocks report:
 ALPHAVANTAGE_API_KEY="..." python app/unemployment.py
 
 python app/stocks.py
+```
+
+Run the example email sending file:
+
+```sh
+python app/email_service.py
 ```
