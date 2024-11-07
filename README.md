@@ -65,7 +65,7 @@ python app/stocks.py
 Run the example email sending file:
 
 ```sh
-python app/email_service.py
+python app/email-service.py
 ```
 
 Run the RPS game:
