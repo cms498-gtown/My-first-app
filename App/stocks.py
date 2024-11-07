@@ -10,6 +10,8 @@ load_dotenv()
 API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 print(API_KEY)
 
+# SELECT A SYMBOL
+
 symbol = input("Please input a symbol (e.g. 'NFLX'): ")
 print("SYMBOL:", symbol)
 
