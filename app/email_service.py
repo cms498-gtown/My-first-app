@@ -1,3 +1,4 @@
+
 # this is the app/email_service.py file...
 
 # LOCAL DEV (ENV VARS)
@@ -10,9 +11,11 @@ load_dotenv() # looks in the ".env" file for env vars
 SENDGRID_SENDER_ADDRESS = os.getenv("SENDGRID_SENDER_ADDRESS")
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 
+
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
+# HELPER FUNCTION:
 
 def send_email_with_sendgrid(recipient_address=SENDGRID_SENDER_ADDRESS,
                              subject="[Shopping Cart App] Testing 123",
@@ -45,9 +48,16 @@ def send_email_with_sendgrid(recipient_address=SENDGRID_SENDER_ADDRESS,
         #print(response.body)
         #print(response.headers)
         print("Email sent successfully!")
+        return response.status_code
     except Exception as err:
         print(f"Error sending email:")
         print(type(err))
         print(err)
+        return None
 
-send_email_with_sendgrid(html_content="Hello. Tuesday Night")
+
+if __name__ == "__main__":
+
+    # SEND EXAMPLE EMAIL:
+
+    send_email_with_sendgrid(html_content="Hello. Tuesday Night")
